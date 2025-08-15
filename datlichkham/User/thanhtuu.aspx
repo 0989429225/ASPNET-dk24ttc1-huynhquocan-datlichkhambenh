@@ -9,6 +9,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Thành Tựu</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+        <style>
+        .body-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.body-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.body-item img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.body-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.body-text h3 {
+  font-size: 20px;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.body-text p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .body-item {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767px) {
+  .body-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .body-text h3 {
+    font-size: 18px;
+  }
+
+  .body-text p {
+    font-size: 15px;
+  }
+}
+    </style>
     <!-- Boxicons -->
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
  <link href ="../Css/style.css" rel="stylesheet" />
@@ -64,132 +126,114 @@
 </div>
         <br />
 
-    <!-- Bộ lọc và tìm kiếm -->
-    <div class="container mb-4">
-      <div class="row">
-        <div class="col-md-3">
-          <asp:DropDownList ID="ddlSpecialty" runat="server" CssClass="form-control">
-            <asp:ListItem Text="Chọn chuyên khoa" Value="" />
-            <asp:ListItem Text="Tim mạch" Value="tim-mach" />
-            <asp:ListItem Text="Nhi" Value="nhi" />
-            <asp:ListItem Text="Viêm gan nhiễm mỡ" Value="viem-gan-nhiem-mo" />
-          </asp:DropDownList>
-        </div>
-        <div class="col-md-6">
-          <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Tìm kiếm theo tên..."></asp:TextBox>
-        </div>
-        <div class="col-md-3">
-          <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-primary btn-block" Text="Tìm kiếm" OnClientClick="filterDoctors(); return false;" />
+   <section class="body-section">
+      <div class="body-item">
+        <img src="../Images/Image_4/be-trai-ngoai-quoc.jpg" alt="Chuyển viện trong tử cung cứu bé trai ngoại quốc"/>
+        <div class="body-text">
+          <h3 style="display: flex; align-items: center; gap: 8px;" >
+              <i class='bx bx-medal' style="font-size: 2em;" ></i>
+              CHUYỂN VIỆN TRONG TỬ CUNG CỨU BÉ TRAI NGOẠI QUỐC
+          </h3>
+          <p>TP HCM_BVĐK Tâm Anh đưa xe cấp cứu chuyên dụng đến cửa khẩu Mộc Bài, “chuyển viện trong tử cung” cứu thai phụ Campuchia dọa sinh non ở tuần 23, thai nhi được nuôi sống ngoạn mục. Ba tháng trước,...</p>
         </div>
       </div>
+      <div class="body-item">
+          <div class="body-text">
+              <h3 style="display: flex; align-items: center; gap: 8px;" >
+                <i class='bx bx-medal' style="font-size: 2em;" ></i>
+                SINH CON THÀNH CÔNG SAU 6 NĂM CẮT BUỒNG TRỨNG CHỮA UNG THƯ
+             </h3>
+              <p>
+                  Chị Ngân, 31 tuổi, sau 6 năm cắt buồng trứng để chữa ung thư, nay thụ tinh ống nghiệm thành công sinh con khỏe mạnh. Năm 2018, chị Ngân không may được chẩn đoán ung thư buồng trứng trái giai đoạn...
+              </p>
+            </div>
+        <img src="../Images/Image_4/buong-trung-chua-ung-thu.jpg" alt="SINH CON THÀNH CÔNG SAU 6 NĂM CẮT BUỒNG TRỨNG CHỮA UNG THƯ"/>
+      </div>
+      <div class="body-item">
+        <img src="../Images/Image_4/phau-thuat-tim-cho-be-tu-ky.jpg" alt="EM BÉ TỰ KỶ VÀ 'VỊ KHÁCH ĐẶC BIỆT' TRONG PHÒNG MỔ TIM"/>
+        <div class="body-text">
+           <h3 style="display: flex; align-items: center; gap: 8px;" >
+               <i class='bx bx-medal' style="font-size: 2em;" ></i>
+               EM BÉ TỰ KỶ VÀ 'VỊ KHÁCH ĐẶC BIỆT' TRONG PHÒNG MỔ TIM
+            </h3>
+          <p>
+              Ca mổ hôm đó thật đặc biệt, chưa từng có tiền lệ trong phòng mổ tim khi bạn búp bê nhỏ được đặc cách vào cùng “chiến binh nhí” là em bé tự kỷ với lỗ thông liên nhĩ lớn. Nhìn bé Anh Thư (7 tuổi, ngụ...
+          </p>
+        </div>
+      </div>
+      <div class="body-item">
+          <div class="body-text">
+            <h3 style="display: flex; align-items: center; gap: 8px;" >
+                <i class='bx bx-medal' style="font-size: 2em;" ></i>
+                MỔ TRONG BỤNG MẸ VÀ CỨU SỐNG HNAGF TRĂM THAI NHI
+             </h3>
+            <p>
+                Tháng 2/2018, lần đầu tiên, các bác sĩ Bệnh viện Đa khoa Tâm Anh thực hiện thành công ca phẫu thuật nội soi điều trị hội chứng Truyền máu song thai - một biến chứng Sản khoa nguy hiểm. “Thẻ xanh”...
+            </p>           
+          </div>
+           <img src="../Images/Image_4/mo-trong-bung-me-cuu-song-thai-nhi.jpg" alt="MỔ TRONG BỤNG MẸ VÀ CỨU SỐNG HNAGF TRĂM THAI NHI"/>
     </div>
-
-    <!-- Danh sách chuyên gia -->
-    <div class="container">
-      <div class="row" id="doctor-list">
-        <!-- Card chuyên gia tim mach -->
-        <div class="col-md-4 doctor-card" data-specialty="tim-mach">
-          <div class="card mb-4">
-            <img src="../Images/Image_2/bac-pham-nguyen-vinh.png" class="card-img-top" alt="PGS.TS.BS PHẠM NGUYỄN VINH" />
-            <div class="card-body">
-              <h5 class="card-title">PGS.TS.BS PHẠM NGUYỄN VINH</h5>
-              <p class="card-text">Chuyên khoa: Tim mạch</p>
-              <a href="https://tamanhhospital.vn/chuyen-gia/pham-nguyen-vinh/" class="btn btn-outline-primary">Xem chi tiết</a>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-md-4 doctor-card" data-specialty="tim-mach">
-          <div class="card mb-4">
-            <img src="../Images/Image_2/nguyen-thi-bach-yen-avt-1.png" class="card-img-top" alt="TTND.PGS.TS.BS NGUYỄN THỊ BẠCH YẾN" />
-            <div class="card-body">
-              <h5 class="card-title">TTND.PGS.TS.BS NGUYỄN THỊ BẠCH YẾN</h5>
-              <p class="card-text">Chuyên khoa: Tim mạch</p>
-              <a href="https://tamanhhospital.vn/chuyen-gia/nguyen-thi-bach-yen/" class="btn btn-outline-primary">Xem chi tiết</a>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-md-4 doctor-card" data-specialty="tim-mach">
-          <div class="card mb-4">
-            <img src="../Images/Image_2/nguyen-minh-tri-vien-avt.png" class="card-img-top" alt="THS.BS NGUYỄN MINH TRÍ VIÊN" />
-            <div class="card-body">
-              <h5 class="card-title">THS.BS NGUYỄN MINH TRÍ VIÊN</h5>
-              <p class="card-text">Chuyên khoa: Tim mạch</p>
-              <a href="https://tamanhhospital.vn/chuyen-gia/nguyen-minh-tri-vien/" class="btn btn-outline-primary">Xem chi tiết</a>
-            </div>
-          </div>
-        </div>
-
-          <!-- Card chuyên gia viemgan_nhiemmo -->
-          <div class="col-md-4 doctor-card" data-specialty="viem-gan-nhiem-mo">
-          <div class="card mb-4">
-            <img src="../Images/Image_2/bs-vu-truong-khanh.png" class="card-img-top" alt="TTƯT.TS.BS VŨ TRƯỜNG KHANH" />
-            <div class="card-body">
-              <h5 class="card-title">TTƯT.TS.BS VŨ TRƯỜNG KHANH</h5>
-              <p class="card-text">Chuyên khoa: Viêm gan- Nhiễm mỡ</p>
-              <a href="https://tamanhhospital.vn/chuyen-gia/vu-truong-khanh/" class="btn btn-outline-primary">Xem chi tiết</a>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-md-4 doctor-card" data-specialty="viem-gan-nhiem-mo">
-            <div class="card mb-4">
-              <img src="../Images/Image_2/le-thanh-quynh-ngan.png" class="card-img-top" alt="THS.BS.CKII LÊ THANH QUỲNH NGÂN" />
-              <div class="card-body">
-                <h5 class="card-title">THS.BS.CKII LÊ THANH QUỲNH NGÂN</h5>
-                <p class="card-text">Chuyên khoa: Viêm gan- Nhiễm mỡ</p>
-                <a href="https://tamanhhospital.vn/chuyen-gia/le-thanh-quynh-ngan/" class="btn btn-outline-primary">Xem chi tiết</a>
-              </div>
-            </div>
-            </div>
-
-           <div class="col-md-4 doctor-card" data-specialty="viem-gan-nhiem-mo">
-            <div class="card mb-4">
-              <img src="../Images/Image_2/bs-huynh-van-trung-1.png" class="card-img-top" alt="BS.CKII HUỲNH VĂN TRUNG" />
-              <div class="card-body">
-                <h5 class="card-title">BS.CKII HUỲNH VĂN TRUNG</h5>
-                <p class="card-text">Chuyên khoa: Viêm gan- Nhiễm mỡ</p>
-                <a href="https://tamanhhospital.vn/chuyen-gia/huynh-van-trung/" class="btn btn-outline-primary">Xem chi tiết</a>
-              </div>
-            </div>
-           </div>
-            <!-- Card chuyên gia khoa nhi  -->
-            
-            <div class="col-md-4 doctor-card" data-specialty="nhi">
-             <div class="card mb-4">
-               <img src="../Images/Image_2/vu-huy-tru.png" class="card-img-top" alt="PGS.TS.BS VŨ HUY TRỤ" />
-               <div class="card-body">
-                 <h5 class="card-title">PGS.TS.BS VŨ HUY TRỤ</h5>
-                 <p class="card-text">Chuyên khoa: Nhi</p>
-                 <a href="https://tamanhhospital.vn/chuyen-gia/pgs-ts-bs-vu-huy-tru/" class="btn btn-outline-primary">Xem chi tiết</a>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-4 doctor-card" data-specialty="nhi">
-             <div class="card mb-4">
-               <img src="../Images/Image_2/nguyen-thi-hanh-le.png" class="card-img-top" alt="BS.CKII NGUYỄN THỊ HẠNH LÊ" />
-               <div class="card-body">
-                 <h5 class="card-title">BS.CKII NGUYỄN THỊ HẠNH LÊ</h5>
-                 <p class="card-text">Chuyên khoa: Nhi</p>
-                 <a href="https://tamanhhospital.vn/chuyen-gia/nguyen-thi-hanh-le/" class="btn btn-outline-primary">Xem chi tiết</a>
-               </div>
-             </div>
-            </div>
-
-            <div class="col-md-4 doctor-card" data-specialty="nhi">
-             <div class="card mb-4">
-               <img src="../Images/Image_2/tran-duc-hau.png" class="card-img-top" alt="TS.BS TRẦN ĐỨC HẬU" />
-               <div class="card-body">
-                 <h5 class="card-title">TS.BS TRẦN ĐỨC HẬU</h5>
-                 <p class="card-text">Chuyên khoa: Nhi</p>
-                 <a href="https://tamanhhospital.vn/chuyen-gia/tran-duc-hau/" class="btn btn-outline-primary">Xem chi tiết</a>
-               </div>
-             </div>
-            </div>
+      <div class="body-item">
+      <img src="../Images/Image_4/ky-thuat-cao-trong-nuoi-tre-sinh-cuc-non.jpg" alt="KỸ THUẬT CAO TRONG NUÔI TRẺ SINH CỰC NON"/>
+      <div class="body-text">
+        <h3 style="display: flex; align-items: center; gap: 8px;" >
+            <i class='bx bx-medal' style="font-size: 2em;" ></i>
+            KỸ THUẬT CAO TRONG NUÔI TRẺ SINH CỰC NON
+         </h3>
+        <p>
+            10h sáng 18/5, BS.CKI Tô Vũ Thiên Hương nhận nhiệm vụ đón bé sinh non 26 tuần nặng 800 gram đang nằm hồi sức ở một bệnh viện phụ sản lớn trên thành phố. Bệnh nhi chuyển viện đến Trung tâm Sơ sinh BVĐK...
+        </p>
       </div>
     </div>
+      <div class="body-item">
+          <div class="body-text">
+            <h3 style="display: flex; align-items: center; gap: 8px;" >
+                <i class='bx bx-medal' style="font-size: 2em;" ></i>
+                TẾ BÀO GỐC MÁU VÀ MÔ DÂY RỐN - TỪ "RÁC THẢI Y TẾ" ĐẾN Y HỌC TÁI TẠO TIỀM NĂNG
+            </h3>
+            <p>
+                Sau nhiều năm tiếp cận công nghệ sinh học tế bào gốc thế giới, Việt Nam đã thành công trong việc biến "rác thải y tế” máu và mô dây rốn thành nguồn dự trữ sinh học quý giá cho nghiên cứu, ứng dụng...
+            </p>
+          </div>
+            <img src="../Images/Image_4/te-bao-goc-mau.jpg" alt="TẾ BÀO GỐC MÁU"/>
+        </div>
+      <div class="body-item">
+          <img src="../Images/Image_4/cuu-benh-nhan-nhoi-mau-co-tim.jpg" alt="27 PHÚT THẦN TỐC CỨU BỆNH NHÂN NHÒI MÁU CƠ TIM"/>
+          <div class="body-text">
+            <h3 style="display: flex; align-items: center; gap: 8px;" >
+                <i class='bx bx-medal' style="font-size: 2em;" ></i>
+                27 PHÚT THẦN TỐC CỨU BỆNH NHÂN NHÒI MÁU CƠ TIM
+            </h3>
+            <p>
+                Các bác sĩ đặt stent khơi thông mạch máu bị tắc, cứu trái tim trước nguy cơ ngừng đập chỉ trong 27 phút, bằng 1/3 thời gian khuyến cáo của thế giới....
+            </p>
+            </div>
+        </div>
+      <div class="body-item">
+          <div class="body-text">
+            <h3 style="display: flex; align-items: center; gap: 8px;" >
+                <i class='bx bx-medal' style="font-size: 2em;" ></i>
+                TẮC ĐỘNG MẠCH PHỔI SAU 3 NĂM UỐNG THUỐC NGỪA THAI
+            </h3>
+            <p>
+                Chị Ánh uống thuốc ngừa thai hơn 3 năm, đột nhiên ngất xỉu, cấp cứu phát hiện huyết khối lấp đầy các nhánh động mạch phổi gây tắc mạch đe dọa tính mạng. BS.CKI Lê Văn Tuyến, Trung tâm Can thiệp...
+            </p>
+          </div>
+            <img src="../Images/Image_4/thuyen-tac-phoi-vi-thuoc-tranh-thai.jpg" alt="TẮC ĐỘNG MẠCH PHỔI SAU 3 NĂM UỐNG THUỐC NGỪA THAI"/>
+      </div>
+      <div class="body-item">
+          <img src="../Images/Image_4/cu-ong-duoc-chan-doan-thieu-mau-co-tim.jpg" alt="MẮT MỜ KHÁM PHÁT HIỆN THIẾU MÁU NUÔI TIM, NGUY CƠ ĐỘT TỬ"/>
+          <div class="body-text">
+            <h3 style="display: flex; align-items: center; gap: 8px;" >
+                <i class='bx bx-medal' style="font-size: 2em;" ></i>
+                MẮT MỜ KHÁM PHÁT HIỆN THIẾU MÁU NUÔI TIM, NGUY CƠ ĐỘT TỬ
+            </h3>
+            <p>
+                Cụ ông được chẩn đoán thiếu máu cơ tim khi đi khám mắt, nguyên nhân do tắc hẹp mạch vành nặng cần đặt stent ngay để tránh đột tử. Trở về phòng nội trú sau khi được đưa đi siêu âm tim, đo điện tâm...
+            </p>
+            </div>
+      </div>
+</section>
 
     <!-- Footer -->
     <footer class="text-center" style="background-color:#17A2B8">
@@ -200,26 +244,7 @@
     </p>
 </footer>
 </form>
-  <!-- Script lọc -->
-  <script>
-    function filterDoctors() {
-      const specialty = document.getElementById('<%= ddlSpecialty.ClientID %>').value.toLowerCase();
-      const keyword = document.getElementById('<%= txtSearch.ClientID %>').value.toLowerCase();
-      const cards = document.querySelectorAll('.doctor-card');
-
-      cards.forEach(card => {
-        const name = card.querySelector('.card-title').textContent.toLowerCase();
-        const cardSpecialty = card.getAttribute('data-specialty');
-
-        const matchSpecialty = !specialty || cardSpecialty === specialty;
-        const matchKeyword = !keyword || name.includes(keyword);
-
-        card.style.display = (matchSpecialty && matchKeyword) ? 'block' : 'none';
-      });
-    }
-        
-   
-  </script>
+ 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

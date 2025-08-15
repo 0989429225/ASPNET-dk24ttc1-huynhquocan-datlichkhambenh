@@ -96,6 +96,15 @@
     <Content Include="Images\Image_3\thongtin7.jpg" />
     <Content Include="Images\Image_3\thongtin8.jpg" />
     <Content Include="Images\Image_3\thongtin9.jpg" />
+    <Content Include="Images\Image_4\be-trai-ngoai-quoc.jpg" />
+    <Content Include="Images\Image_4\buong-trung-chua-ung-thu.jpg" />
+    <Content Include="Images\Image_4\cu-ong-duoc-chan-doan-thieu-mau-co-tim.jpg" />
+    <Content Include="Images\Image_4\cuu-benh-nhan-nhoi-mau-co-tim.jpg" />
+    <Content Include="Images\Image_4\ky-thuat-cao-trong-nuoi-tre-sinh-cuc-non.jpg" />
+    <Content Include="Images\Image_4\mo-trong-bung-me-cuu-song-thai-nhi.jpg" />
+    <Content Include="Images\Image_4\phau-thuat-tim-cho-be-tu-ky.jpg" />
+    <Content Include="Images\Image_4\te-bao-goc-mau.jpg" />
+    <Content Include="Images\Image_4\thuyen-tac-phoi-vi-thuoc-tranh-thai.jpg" />
     <Content Include="Images\phat_trien_ben_vung.jpg" />
     <Content Include="Images\quy_trinh_khoa_hoc.jpg" />
     <Content Include="Images\trach_nhiem_voi_cong_dong.jpg" />
