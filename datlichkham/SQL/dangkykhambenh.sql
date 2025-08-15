@@ -69,3 +69,5 @@ drop table LienHe;
 select * from LienHe;
 select * from Users;
 use dangkykhambenh;
+
+SELECT name FROM sys.databases WHERE name = 'dangkylichkham';

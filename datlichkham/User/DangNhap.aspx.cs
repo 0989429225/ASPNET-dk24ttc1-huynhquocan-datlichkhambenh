@@ -22,21 +22,23 @@ namespace Doan.User
 
             using (SqlConnection conn = new SqlConnection("Server=localhost;Database=dangkykhambenh;Trusted_Connection=True;"))
             {
-                string sql = "SELECT role FROM Users WHERE username=@tenDN AND password=@mk";
+                string sql = "SELECT userID, role FROM Users WHERE username=@tenDN AND password=@mk";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@tenDN", tenDN);
                 cmd.Parameters.AddWithValue("@mk", mk);
 
                 conn.Open();
-                object roleObj = cmd.ExecuteScalar();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                if (roleObj != null)
+                if (reader.Read())
                 {
-                    string role = roleObj.ToString();
+                    int userID = Convert.ToInt32(reader["userID"]);
+                    string role = reader["role"].ToString();
 
-                    // Lưu thông tin đăng nhập nếu cần
-                    Session["role"] = role;
+                    // Gán session đầy đủ
+                    Session["userID"] = userID;
                     Session["username"] = tenDN;
+                    Session["role"] = role;
 
                     // Điều hướng theo role
                     if (role == "Admin")
@@ -46,11 +48,9 @@ namespace Doan.User
                 }
                 else
                 {
-                    lblThongBao.Text = "Sai tên đăng nhập hoặc mật khẩu!";
+                    lblThongBao.Text = "❌ Sai tên đăng nhập hoặc mật khẩu!";
                 }
-
             }
-
         }
     }
 }
