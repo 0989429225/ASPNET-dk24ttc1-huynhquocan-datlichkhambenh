@@ -67,3 +67,5 @@ select * from LichKham;
 delete from LichKham where userID = '0';
 drop table LienHe;  
 select * from LienHe;
+select * from Users;
+use dangkykhambenh;

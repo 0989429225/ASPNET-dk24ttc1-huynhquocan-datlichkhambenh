@@ -29,7 +29,7 @@
                             </div>
 
                             <asp:Button ID="btnLogin" runat="server" Text="Đăng nhập" CssClass="btn btn-primary w-100" OnClick="btnLogin_Click" />
-
+                            <asp:Label ID="lblThongBao" runat="server" CssClass="text-danger text-center d-block mt-3" />
                             <p class="mt-3 text-center">
                                 Chưa có tài khoản? <a href="DangKy.aspx">Đăng ký</a>
                             </p>

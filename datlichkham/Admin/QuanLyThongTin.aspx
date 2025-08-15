@@ -1,15 +1,111 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QuanLyThongTin.aspx.cs" Inherits="Doan.Admin.QuanLyThongTin" %>
+﻿<%@ Register Src="~/UserControl.ascx" TagPrefix="uc" TagName="Logout" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QuanLyThongTin.aspx.cs" Inherits="Doan.Admin.QuanLyThongTin" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Quản lý lịch khám</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+    <style>
+        .jumbotron { margin-bottom: 0; padding: 30px 15px; }
+        .admin-title { font-size: 48px; font-weight: bold; }
+        .admin-sub { font-size: 20px; margin-top: 10px; }
+        .navbar { margin-bottom: 30px; }
+        footer { background-color: #f2f2f2; padding: 25px; }
+        .glyphicon { margin-right: 5px; }
+         html, body {
+               height: 100%;
+               margin: 0;
+             }
+
+             .wrapper {
+               min-height: 100%;
+               display: flex;
+               flex-direction: column;
+             }
+
+             .main-content {
+               flex: 1;
+             }
+
+             .footer {
+               background-color: #f1f1f1;
+               text-align: center;
+               padding: 10px;
+               font-size: 14px;
+               color: #333;
+             }
+             .footer a:hover {
+  color: #007bff;
+}
+.footer i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+          <div class="jumbotron text-center">
+              <div class="row">
+                <div class="col-sm-4 admin-title">Admin</div>
+                <div class="col-sm-8">
+                  <div class="row">
+                    <div class="col-sm-3 admin-sub">
+                      <a href="QuanLyTaiKhoan.aspx" style="text-decoration: none; color: inherit;">
+                        Quản lý tài khoản
+                      </a>
+                    </div>
+
+                    <div class="col-sm-3 admin-sub">
+                      <a href="QuanLyThongTin.aspx" style="text-decoration: none; color: inherit;">
+                        Quản lý lịch đăng ký
+                      </a>
+                    </div>
+                      <div class="col-sm-3 admin-sub">
+                          <uc:Logout runat="server" ID="ucLogout" />
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <div class="container">
+            <asp:GridView ID="gvLichKham" runat="server" AutoGenerateColumns="False"
+                CssClass="table table-bordered table-hover">
+                <Columns>
+                    <asp:BoundField DataField="id" HeaderText="ID" />
+                    <asp:BoundField DataField="userID" HeaderText="UserID" />
+                    <asp:BoundField DataField="dichvu_kham" HeaderText="Dịch vụ khám" />
+                    <asp:BoundField DataField="loai_hinh_kham" HeaderText="Loại hình khám" />
+                    <asp:BoundField DataField="id_chuyen_khoa" HeaderText="Chuyên khoa" />
+                    <asp:BoundField DataField="id_bac_si" HeaderText="Bác sĩ" />
+                    <asp:BoundField DataField="ngay_kham" HeaderText="Ngày khám" DataFormatString="{0:dd/MM/yyyy}" />
+                    <asp:BoundField DataField="noi_dung" HeaderText="Nội dung" />
+                </Columns>
+            </asp:GridView>
         </div>
+
+        <div class="footer" style="text-align:center; padding:20px; background:#f5f5f5;">
+  <p>Liên hệ: Huỳnh Quốc An | 📞 0989429225</p>
+  
+  <!-- Gmail -->
+  <a href="#" style="margin:0 10px; text-decoration:none; color:#333;">
+    <i class='bx bx-envelope'></i> Gmail
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/hqan2205" target="_blank" style="margin:0 10px; text-decoration:none; color:#333;">
+    <i class='bx bxl-facebook'></i> Facebook
+  </a>
+</div>
+
+
     </form>
 </body>
 </html>

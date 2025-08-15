@@ -17,36 +17,40 @@ namespace Doan.User
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUser.Text.Trim();
-            string password = txtPass.Text.Trim();
+            string tenDN = txtUser.Text.Trim();
+            string mk = txtPass.Text.Trim();
 
-            string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlConnection conn = new SqlConnection("Server=localhost;Database=dangkykhambenh;Trusted_Connection=True;"))
             {
+                string sql = "SELECT role FROM Users WHERE username=@tenDN AND password=@mk";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@tenDN", tenDN);
+                cmd.Parameters.AddWithValue("@mk", mk);
+
                 conn.Open();
+                object roleObj = cmd.ExecuteScalar();
 
-                // Truy vấn lấy ID người dùng thay vì chỉ đếm
-                string query = "SELECT userID FROM Users WHERE username = @username AND password = @password";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-
-                object result = cmd.ExecuteScalar();
-                
-                if (result != null)
+                if (roleObj != null)
                 {
-                    FormsAuthentication.SetAuthCookie(username, true);
-                    int userID = Convert.ToInt32(result);
-                    Session["userID"] = userID;              // ✅ Gán userID vào Session
-                    Session["username"] = username;          // (tuỳ chọn) lưu thêm tên người dùng
-                    Response.Redirect("XemTT.aspx");         // Chuyển hướng sau khi đăng nhập
+                    string role = roleObj.ToString();
+
+                    // Lưu thông tin đăng nhập nếu cần
+                    Session["role"] = role;
+                    Session["username"] = tenDN;
+
+                    // Điều hướng theo role
+                    if (role == "Admin")
+                        Response.Redirect("~/Admin/QuanLyTaiKhoan.aspx");
+                    else if (role == "User")
+                        Response.Redirect("xemTT.aspx");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Sai tên đăng nhập hoặc mật khẩu!');</script>");
+                    lblThongBao.Text = "Sai tên đăng nhập hoặc mật khẩu!";
                 }
-            }
-        }
 
+            }
+
+        }
     }
 }

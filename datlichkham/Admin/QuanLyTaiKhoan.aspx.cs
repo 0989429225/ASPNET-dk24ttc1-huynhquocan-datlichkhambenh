@@ -18,11 +18,11 @@ namespace Doan.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["role"] == null || Session["role"].ToString() != "Admin")
             {
-                ViewState["Action"] = ActionType.None;
-                LoadUsers();
+                Response.Redirect("DangNhap.aspx");
             }
+
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

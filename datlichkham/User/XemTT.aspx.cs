@@ -11,6 +11,10 @@ namespace Doan.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["role"] == null || Session["role"].ToString() != "User")
+            {
+                Response.Redirect("DangNhap.aspx");
+            }
 
         }
     }
