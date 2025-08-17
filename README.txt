@@ -10,7 +10,7 @@
 ## 🚀 Cách chạy
 - Mở bằng Visual Studio
 - Chạy bằng IIS Express
-- Thực thi file `SQL/datlichkham.sql` bằng SSMS để tạo cơ sở dữ liệu
+- Thực thi file `SQL/dangkykhambenh.sql` bằng SSMS để tạo cơ sở dữ liệu
 
 ## 📌 Tính năng
 - Đăng ký khám bệnh theo chuyên khoa
